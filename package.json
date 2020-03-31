@@ -5,7 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "caculation",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
   },
   "author": "SynY",
   "license": "ISC",
