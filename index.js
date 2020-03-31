@@ -1,6 +1,9 @@
 const electron = require('electron')
+const print = require('./share/utils').printf
 
 const { app, BrowserWindow } = require('electron')
+
+
 
 function createWindow () {
     // 创建浏览器窗口
