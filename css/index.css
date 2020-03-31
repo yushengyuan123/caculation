@@ -1,0 +1,73 @@
+* {
+ padding: 0;
+ margin: 0;
+}
+
+.con {
+
+}
+
+.title {
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+}
+
+.exercise-num {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1em auto;
+    width: 90vw;
+}
+
+.exercise-num li {
+    display: inline-block;
+    padding: 0.2em 1em;
+    font-size: 16px;
+    cursor: pointer;
+} 
+
+.exercise-num .exercise-select {
+    border-bottom: 3px solid #000;
+}
+
+.exercise-con {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80vw;
+}
+
+.exercise {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 0.5em 1em;
+    font-size: 14px;
+
+}
+
+.exercise p {
+    color: #666;
+}
+
+.exercise input {
+    margin: 0 0.5em;
+    width: 3em;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid #666;
+}
+
+.commit {
+    display: block;
+    margin: 3em auto;
+    padding: 0.5em 2em;
+    width: 2em;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f40;
+}

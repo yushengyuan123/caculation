@@ -5,11 +5,21 @@
     <title>Hello World!</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 <body>
-<h1>Hello World!</h1>
-We are using node <script>document.write(process.versions.node)</script>,
-Chrome <script>document.write(process.versions.chrome)</script>,
-and Electron <script>document.write(process.versions.electron)</script>.
+	<div class="con">
+		<h3 class="title">希望小学期末数学考试</h3>
+		<ul class="exercise-num ">
+			<li class="exercise-select" click="creatExercise" num="10">10道</li>
+			<li click="creatExercise" num="50">50道</li>
+			<li click="creatExercise" num="100">100道</li>
+			<li click="creatExercise" num="1000">1000道</li>
+			<li click="creatExercise" num="10000">10000道</li>
+		</ul>
+		<div class="exercise-con"></div>
+		<div class="commit" click="commit">提交</div>
+	</div>
+	<script src="./js/test.js"></script>
 </body>
 </html>
