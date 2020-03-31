@@ -1,4 +1,4 @@
-const _isNumber = require('./utils').isNumber
+const _isNumber = require('../share/utils').isNumber
 
 const operator = ['+', '-', '*', '/']
 /**
