@@ -1,0 +1,15 @@
+{
+  "name": "calculation",
+  "version": "1.0.0",
+  "description": "a program to create calculation formula",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "SynY",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.0"
+  }
+}
