@@ -6,39 +6,38 @@ let fs = require('fs');
  * callback: 回调函数
  * @param Object, number, function
  */
-
-function wirteFile(arr, type, callback) {
-	if(!arr) {
-		return console.error("null file");
-	}
-	let len = arr.length;
-	let str = "";
-	let path = ""
-	for(let i = 0; i < len; i++) {
-		if(i == len-1) {
-			str += arr[i];
+function wirteFile(arr, type) {
+	return new Promise((resolve,reject) => {
+		if(!arr) {
+			return reject("null file");
+		}
+		let len = arr.length;
+		let str = "";
+		let path = "";
+		for(let i = 0; i < len; i++) {
+			if(i == len-1) {
+				str += arr[i];
+			} else {
+				str += arr[i] + ',\r\n';
+			}
+		}
+		if (type == 0) {
+			path = "./static/Exercises.txt";
+		} else if (type == 1) {
+			path = "./static/Answers.txt";
+		} else if (type == 2) {
+			path = "./static/Grade.txt";
 		} else {
-			str += arr[i] + ',\r\n';
+			return reject("parameter error");
 		}
-	}
-	if (type == 0) {
-		path = "./static/Exercises.txt";
-	} else if (type == 1) {
-		path = "./static/Answers.txt";
-	} else if (type == 2) {
-		path = "./static/Grade.txt";
-	} else {
-		return console.error("parameter error");
-	}
-	fs.writeFile(path, str, (err) => {
-		if (err) {
-			return console.error("Failure to writeFile");
-		}
-		if(callback) {
-			callback()
-		}
-	});
-	
+		fs.writeFile(path, str, (err) => {
+			if (err) {
+				reject(err);
+			} else {
+				resolve();
+			}
+		});
+	})
 }
 /**
  * 同步读取文件，返回文件字符串数组
@@ -53,7 +52,7 @@ function readFile(type) {
 	} else {
 		return console.error("parameter error");
 	}
-	return fs.readFileSync(path).toString().split(',\r\n')
+	return fs.readFileSync(path).toString().split(',\r\n');
 	// fs.readFile(path, function (err, res) {
 	// 	if (err) {
 	// 		return console.error(err);
@@ -61,7 +60,23 @@ function readFile(type) {
 	// 	let back = res.toString().split(',\r\n')
 	// });
 }
+/**
+ * 获取填写的答案数组
+ * 参数为题目文件读出来的数组，即 getWriteArr(readFile(0))
+ * @param Array
+ */
+function getWriteArr(exerciseArr) {
+	let len = exerciseArr.length;
+	let arr = [];
+	for(let i = 0; i < len; i++) {
+		arr.push(exerciseArr[i].split('=')[1].replace(/\s+/g,""));
+	}
+	return arr;
+	// 返回格式： [ '1' , '2', '3']，对应题目顺序
+}
+
 module.exports = {
     wirteFile: wirteFile,
-    readFile: readFile
+    readFile: readFile,
+    getWriteArr: getWriteArr
 }

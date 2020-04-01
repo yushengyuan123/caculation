@@ -52,7 +52,7 @@
     color: #666;
 }
 
-.exercise input {
+.exercise-write {
     margin: 0 0.5em;
     width: 3em;
     font-weight: bold;
@@ -60,6 +60,10 @@
     border: none;
     text-align: center;
     border-bottom: 1px solid #666;
+}
+
+.exercise-judeg {
+    font-weight: bold;
 }
 
 .commit {
