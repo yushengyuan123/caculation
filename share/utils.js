@@ -12,8 +12,8 @@ const getRandom = function() {
     if(isZ) {
         return Math.floor(Math.random() * 9 + 1)
     } else {
-        let Denominator = Math.floor(Math.random() * 9 + 1)
         let Molecule = Math.floor(Math.random() * 9 + 1)
+        let Denominator = Math.floor(Math.random() * (Molecule - 1 - 1 + 1) + 1)
         return `${Denominator}/${Molecule}`
     }
 }
