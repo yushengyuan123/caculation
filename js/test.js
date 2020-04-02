@@ -3,6 +3,7 @@ let answerArr = null;	// 存放答案的数组
 let gradeArr = null;   // 存放成绩的数组
 let exerciseNum = 10;  // 题目数量
 let {wirteFile, readFile, getWriteArr} = require("./core/handleFile.js")
+let {createExpression, answer} = require("./core/expression.js")
 
 window.onload = ()=>{
    createExercise(exerciseNum);
@@ -30,7 +31,7 @@ con.onclick = (e)=>{
 // 事件1：切换题目数量
 let exerciseCon = document.getElementsByClassName('exercise-con')[0];
 function changeExerciseNum(target){
-	let num = target.getAttribute('num');
+	let num = parseInt(target.getAttribute('num'));
 	// if(exerciseNum == num) {
 	// 	return;
 	// }
@@ -43,25 +44,25 @@ function changeExerciseNum(target){
 
 // 生成题目与答案
 function createExercise(num) {
-	exerciseArr = [];
-	answerArr = [];
+	exerciseArr = createExpression(num);
+	answerArr = answer(exerciseArr);
 	// 测试数据
-	for(let i = 0; i < num; i++) {
-		let num1 = Math.round(Math.random() * 10);
-		let num2 = Math.round(Math.random() * 10);
-		let num3 = Math.round(Math.random() * 10);
-		let num4 = Math.round(Math.random() * 10);
-		// exerciseArr.push(`${num1} + ${num2} = ${num3}`);
-		exerciseArr.push(`${num1} + ${num2} = `);
-		answerArr.push(num4);
-	}
+	// for(let i = 0; i < num; i++) {
+	// 	let num1 = Math.round(Math.random() * 10);
+	// 	let num2 = Math.round(Math.random() * 10);
+	// 	let num3 = Math.round(Math.random() * 10);
+	// 	let num4 = Math.round(Math.random() * 10);
+	// 	// exerciseArr.push(`${num1} + ${num2} = ${num3}`);
+	// 	exerciseArr.push(`${num1} + ${num2} = `);
+	// 	answerArr.push(num4);
+	// }
 	showExercise();
-	// wirteFile(exerciseArr, 0).then(()=>{
-	// 	wirteFile(answerArr, 1).then(()=>{
-	// 		console.log(readFile(0));
-	// 		console.log(readFile(1));
-	// 	});
-	// })
+	wirteFile(exerciseArr, 0).then(()=>{
+		wirteFile(answerArr, 1).then(()=>{
+			console.log(readFile(0));
+			console.log(readFile(1));
+		});
+	})
 }
 
 // 显示题目
