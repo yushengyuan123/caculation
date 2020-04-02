@@ -100,5 +100,10 @@ const createExpression = function(number) {
     return result
 }
 
+module.exports = {
+    createExpression: createExpression,
+    answer: answer
+}
+
 
 
