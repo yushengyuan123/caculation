@@ -15,6 +15,16 @@ function getOperator() {
     return operator[Math.floor(Math.random() * (3 + 1))]
 }
 
+function evil(expression) {
+    let newStr = expression.replace(/÷/g, '/').replace(/=/g,'').split(' ')
+    for (let i = 0; i < newStr.length; i++) {
+
+    }
+}
+
+
+print(1 + 2)
+
 /**
  *
  * @param qus 提交的答案
@@ -99,6 +109,7 @@ const createExpression = function(number) {
     }
     return result
 }
+
 
 module.exports = {
     createExpression: createExpression,
