@@ -9,6 +9,7 @@
 
 .title {
     margin: 1em 0;
+    width: 100%;
     text-align: center;
 }
 
@@ -43,10 +44,13 @@
     display: inline-flex;
     justify-content: flex-start;
     padding: 0.5em 0em;
-    width: 16em;
+    width: 27em;
     font-size: 14px;
+}
 
-
+.exercise span {
+    color: #000;
+    font-weight: bold;
 }
 
 .exercise p {
@@ -54,8 +58,8 @@
 }
 
 .exercise-write {
-    margin: 0 0.5em;
-    width: 3em;
+    /*margin: 0 0.5em;*/
+    width: 5em;
     font-weight: bold;
     outline: none;
     border: none;

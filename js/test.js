@@ -68,17 +68,20 @@ function createExercise(num) {
 
 // 显示题目
 function showExercise() {
+	let htmlStr = ''
 	let len = exerciseArr.length;
-	exerciseCon.innerHTML = ''
+	exerciseCon.innerHTML = '';
 	for(let i = 0; i < len; i++) {
 		let num = Math.round(Math.random() * 10);
-		exerciseCon.innerHTML += 
+		htmlStr += 
 		`<span class="exercise">
+			<span>${i+1}、  </span>	
 			<p>${exerciseArr[i]}</p>
 			<input class="exercise-write" type="text">
 			<div class="exercise-judeg"></div>
 		</span>`
 	}
+	exerciseCon.innerHTML = htmlStr;
 }
 
 // 事件2：提交答案
