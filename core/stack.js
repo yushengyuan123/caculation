@@ -31,7 +31,6 @@ const changeFormat = function (array) {
             freeback[i] = temp[0] / temp[1]
         }
     }
-    console.log(freeback)
     return freeback
 }
 

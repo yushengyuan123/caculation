@@ -108,7 +108,6 @@ const createExpression = function(number) {
             }
         }
     }
-    console.log(result)
     return result
 }
 
