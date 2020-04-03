@@ -4,6 +4,7 @@ let gradeArr = null;   // 存放成绩的数组
 let exerciseNum = 10;  // 题目数量
 let {wirteFile, readFile, getWriteArr} = require("./core/handleFile.js")
 let {createExpression, answer} = require("./core/expression.js")
+let {checkAnswer} = require("./core/checkAnswer.js")
 
 window.onload = ()=>{
    createExercise(exerciseNum);
@@ -102,7 +103,7 @@ function judeg(writeArr, answerArr) {
 	let len = answerArr.length;
 	let exerciseJudgeArr = document.getElementsByClassName('exercise-judeg');
 	for(let i = 0; i < len; i++) {
-		if(writeArr[i] == answerArr[i]) {
+		if(checkAnswer(writeArr[i], answerArr[i])) {
 			exerciseJudgeArr[i].innerHTML = '√';
 			exerciseJudgeArr[i].style.color="#080";
 		} else {

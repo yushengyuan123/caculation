@@ -4,12 +4,11 @@
 }
 
 .con {
-
+    min-width: 430px;
 }
 
 .title {
-    height: 3em;
-    line-height: 3em;
+    margin: 1em 0;
     text-align: center;
 }
 
@@ -18,7 +17,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 1em auto;
-    width: 90vw;
+    width: 90%;
 }
 
 .exercise-num li {
@@ -35,16 +34,18 @@
 .exercise-con {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     margin: 0 auto;
-    width: 80vw;
+    width: 80%;
 }
 
 .exercise {
     display: inline-flex;
-    justify-content: space-around;
-    padding: 0.5em 1em;
+    justify-content: flex-start;
+    padding: 0.5em 0em;
+    width: 16em;
     font-size: 14px;
+
 
 }
 
