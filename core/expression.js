@@ -1,5 +1,6 @@
 const _isNumber = require('../share/utils').isNumber
 const getRandom = require('../share/utils').getRandom
+const getResult = require('./stack')
 const print = require('../share/utils').printf
 const _ = require('underscore')
 
@@ -22,8 +23,6 @@ function evil(expression) {
     }
 }
 
-
-print(1 + 2)
 
 /**
  *
@@ -56,7 +55,9 @@ const answer = function (qus) {
     }
     let answer = []
     for (let i = 0; i < qus.length; i++) {
-        answer.push(eval(qus[i].replace(/÷/g, '/').replace(/=/g,'')))
+        let temp = qus[i].split('=')[0]
+        temp = temp.substring(0, temp.length - 1)
+        answer.push(getResult(temp))
     }
     return answer
 }
@@ -107,9 +108,9 @@ const createExpression = function(number) {
             }
         }
     }
+    console.log(result)
     return result
 }
-
 
 module.exports = {
     createExpression: createExpression,
