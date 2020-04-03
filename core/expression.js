@@ -16,14 +16,6 @@ function getOperator() {
     return operator[Math.floor(Math.random() * (3 + 1))]
 }
 
-function evil(expression) {
-    let newStr = expression.replace(/÷/g, '/').replace(/=/g,'').split(' ')
-    for (let i = 0; i < newStr.length; i++) {
-
-    }
-}
-
-
 /**
  *
  * @param qus 提交的答案
@@ -41,7 +33,7 @@ function verifyAnswer(qus, ans) {
 
 //判断运算式子结果是否大于0
 const _positive = function (expression) {
-    return eval(expression.replace(/÷/g, '/')) >= 0
+    return getResult(expression) >= 0
 }
 
 /**

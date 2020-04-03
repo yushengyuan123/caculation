@@ -27,8 +27,14 @@ const changeFormat = function (array) {
             freeback[i] = '/'
         }
         if (array[i].length > 1 && array[i].indexOf('/') !== -1) {
-            let temp = freeback[i].split('/')
-            freeback[i] = temp[0] / temp[1]
+            if (array[i].indexOf('^') !== -1) {
+                let temp = freeback[i].split('/')
+                let one = temp[0].split('^')
+                freeback[i] = Number(one[0]) + Number(one[1] / temp[1])
+            } else {
+                let temp = freeback[i].split('/')
+                freeback[i] = temp[0] / temp[1]
+            }
         }
     }
     return freeback
@@ -114,7 +120,7 @@ const getResult = function (suffix) {
                     break
                 }
                 default: {
-                    throw new Error('Illegal symbol ')
+                    throw new Error('illegal symbol ')
                 }
             }
         }
