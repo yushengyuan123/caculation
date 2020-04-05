@@ -8,7 +8,39 @@
 </head>
 <body>
 	<div class="con">
-		<h3 class="title">希望小学期末数学考试</h3>
+		<div class="title">
+			<svg >
+				<clipPath id="cp-text">
+					<text text-anchor="middle" x="50%" y="50%" dy=".35em" class="text-line">小学四则运算题目</text>
+				</clipPath>
+				<g clip-path="url(#cp-text)" class="shadow">
+					<rect width="100%" height="100%" class="anim-shape anim-shape--shadow"></rect>
+				</g>
+				<g clip-path="url(#cp-text)" class="colortext">
+					<rect width="100%" height="100%" fill="#0E1826" class="anim-shape"></rect>
+					<rect width="80%" height="100%" fill="#166973" class="anim-shape"></rect>
+					<rect width="60%" height="100%" fill="#65BFA6" class="anim-shape"></rect>
+					<rect width="40%" height="100%" fill="#F2CD5C" class="anim-shape"></rect>
+					<rect width="20%" height="100%" fill="#F26444" class="anim-shape"></rect>
+				</g>
+			</svg>
+		</div>
+		<div class="author">
+			<svg >
+				<defs>
+					<linearGradient id="authorColor" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" stop-color="#F26444"></stop>
+						<stop offset="25%" stop-color="#F2CD5C"></stop>
+						<stop offset="50%" stop-color="#65BFA6"></stop>
+						<stop offset="75%" stop-color="#166973"></stop>
+						<stop offset="100%" stop-color="#0E1826"></stop>
+					</linearGradient>
+				</defs>
+				<text text-anchor="middle" x="50%" y="50%" fill="url(#authorColor)">
+					—— by 余圣源 and 王树干
+				</text>
+			</svg>
+		</div>
 		<ul class="exercise-num ">
 			<li class="exercise-select" click="creatExercise" num="10">10道</li>
 			<li click="creatExercise" num="50">50道</li>

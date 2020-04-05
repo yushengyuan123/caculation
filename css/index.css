@@ -4,13 +4,59 @@
 }
 
 .con {
-    min-width: 430px;
+    min-width: 500px;
 }
 
 .title {
-    margin: 1em 0;
-    width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.title svg {
+    height: 2em;
+    width: 11em;
+    font-size: 45px;
+}
+
+.title .text-line {
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+.title .anim-shape {
+    transform: translate(0, 0);
+    animation: moving-panel 1s ease-in-out infinite alternate;
+}
+
+.title .shadow {
+  transform: translate(0.15em, 0.15em);
+}
+
+.title .anim-shape--shadow {
+  fill: #000;
+  fill-opacity: .2;
+}
+
+@keyframes moving-panel {
+    0% {
+        transform: translate(-1em, 0);
+    }
+    100% {
+        transform: translate(1em, 0);
+    }
+}
+
+.author {
+    display: flex;
+    justify-content: center;
+}
+
+.author svg {
+    height: 2em;
+    width: 20em;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .exercise-num {
@@ -74,9 +120,13 @@
 .commit {
     display: block;
     margin: 3em auto;
-    padding: 0.5em 2em;
-    width: 2em;
+    padding: 0.5em 0;
+    color: #fff;
+    width: 10em;
+    font-size: 16px;
+    text-align: center;
     cursor: pointer;
+    font-weight: bold;
     border-radius: 5px;
     background-color: #f40;
 }
