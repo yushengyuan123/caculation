@@ -105,13 +105,32 @@ function judeg(writeArr, answerArr) {
 
 	let len = answerArr.length;
 	let exerciseJudgeArr = document.getElementsByClassName('exercise-judeg');
+	let correctArr = [];
+	let wrongArr = [];
 	for(let i = 0; i < len; i++) {
 		if(checkAnswer(writeArr[i], answerArr[i])) {
 			exerciseJudgeArr[i].innerHTML = '√';
 			exerciseJudgeArr[i].style.color="#080";
+			correctArr.push(i+1);
 		} else {
 			exerciseJudgeArr[i].innerHTML = 'X';
 			exerciseJudgeArr[i].style.color="#f40";
+			wrongArr.push(i+1);
 		}
 	}
+	gradeArr = [`Correct: (${getStr(correctArr)})`, `Wrong: (${getStr(wrongArr)})`,]
+	wirteFile(gradeArr, 2)
+}
+
+function getStr(dataArr) {
+	let str = '';
+	let len = dataArr.length;
+	for(let i = 0; i < len; i++) {
+		if(i+1 == len) {
+			str += ` ${dataArr[i]}`;
+		}else {
+			str += ` ${dataArr[i]},`;
+		}
+	}
+	return str;
 }
